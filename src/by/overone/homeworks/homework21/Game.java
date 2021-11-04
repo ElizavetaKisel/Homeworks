@@ -31,7 +31,7 @@ public class Game {
     }
 
     public String wining(){
-        if (Field.field[0][0].equals(Field.field[1][1]) && Field.field[0][0].equals(Field.field[3][3])){
+        if (Field.field[0][0].equals(Field.field[1][1]) && Field.field[0][0].equals(Field.field[2][2])){
             return Field.field[0][0];
         }
         if (Field.field[0][2].equals(Field.field[1][1]) && Field.field[0][2].equals(Field.field[2][0])){
@@ -49,6 +49,6 @@ public class Game {
             }
         }
 
-       return null;
+       return "null";
     }
 }

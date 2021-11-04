@@ -17,5 +17,16 @@ public class Field {
         return str;
     }
 
+    public static boolean fullField(){
+        for (int i = 0; i< field.length;i++){
+            for (int j = 0; j< field[i].length; j++){
+                if (field[i][j].equals(" ")){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
 }
 

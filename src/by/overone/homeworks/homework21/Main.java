@@ -30,13 +30,19 @@ public class Main {
                 System.out.println("Неверный ввод. Повторите:");
             }
 
-            game.computerMove();
+            if (Field.fullField()) {
+                System.out.println("Ничья.");
+                System.out.println(Field.printField());
+                break;
+            }else {
+                game.computerMove();
+            }
             System.out.println(Field.printField());
 
             if(game.wining().equals("x")){
                 System.out.println("Победа!!!");
                 break;
-            }else if (game.wining().equals("x")){
+            }else if (game.wining().equals("o")){
                 System.out.println("Поражение(((");
                 break;
             }
