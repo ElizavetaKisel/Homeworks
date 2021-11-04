@@ -33,7 +33,13 @@ public class Main {
             game.computerMove();
             System.out.println(Field.printField());
 
-
+            if(game.wining().equals("x")){
+                System.out.println("Победа!!!");
+                break;
+            }else if (game.wining().equals("x")){
+                System.out.println("Поражение(((");
+                break;
+            }
         }
 
     }

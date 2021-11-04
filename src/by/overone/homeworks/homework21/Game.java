@@ -28,6 +28,27 @@ public class Game {
                 break;
             }
         }
+    }
 
+    public String wining(){
+        if (Field.field[0][0].equals(Field.field[1][1]) && Field.field[0][0].equals(Field.field[3][3])){
+            return Field.field[0][0];
+        }
+        if (Field.field[0][2].equals(Field.field[1][1]) && Field.field[0][2].equals(Field.field[2][0])){
+            return Field.field[0][2];
+        }
+        for (int i = 0; i< Field.field.length; i++){
+
+            if ( Field.field[i][0].equals(Field.field[i][1]) && Field.field[i][1].equals(Field.field[i][2]) ) {
+                return Field.field[i][0];
+            }
+            for (int j = 0; j< Field.field[i].length; j++) {
+                if ( Field.field[0][j].equals(Field.field[1][j]) && Field.field[1][j].equals(Field.field[2][j]) ) {
+                    return Field.field[0][j];
+                }
+            }
+        }
+
+       return null;
     }
 }
