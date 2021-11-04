@@ -1,5 +1,6 @@
 package by.overone.homeworks.homework21;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Input {
@@ -7,10 +8,17 @@ public class Input {
     private int y;
     Scanner scan = new Scanner(System.in);
 
-    public void enterСoordinates(){
+    public int enterСoordinates(){
 
-        x = scan.nextInt();
-        y = scan.nextInt();
+        try {
+            x = scan.nextInt();
+            y = scan.nextInt();
+            return 1;
+        }
+        catch (InputMismatchException ex){
+            scan.nextLine();
+            return 0;
+        }
     }
 
     public int getX() {
