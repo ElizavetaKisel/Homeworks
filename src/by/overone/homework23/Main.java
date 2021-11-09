@@ -8,9 +8,9 @@ public class Main {
         Num <Short> shortNum = new Num((short)32767);
         Num <Long> longNum = new Num(805400193L);
         Num <Double> doubleNum = new Num(3.3);
-        Num <Float> floatNum = new Num(1.12322342f);
+        Num <Float> floatNum = new Num(2.12322342f);
 
-        var result = longNum.subtract(floatNum);
+        var result = longNum.multiply(floatNum);
         if (result == null){
             System.out.println("Error. Out of bounds type size.");
         }else {

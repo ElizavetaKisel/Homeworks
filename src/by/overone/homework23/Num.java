@@ -21,7 +21,8 @@ public class Num <N extends Number>{
     }
 
     public N multiply(Num<?> x){
-        return null;
+        Double result = num.doubleValue() * x.getNum().doubleValue();
+        return chooseType(result);
     }
 
     public N divide(Num<?> x){
