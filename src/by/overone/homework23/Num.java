@@ -25,8 +25,13 @@ public class Num <N extends Number>{
         return chooseType(result);
     }
 
-    public N divide(Num<?> x){
-        return null;
+    public N divide(Num<?> x) throws ArithmeticException{
+        if (x.getNum().doubleValue() == 0.0){
+            throw new ArithmeticException("Division by zero");
+        }
+        Double result = num.doubleValue() / x.getNum().doubleValue();
+        System.out.println(result.doubleValue());
+        return chooseType(result);
     }
 
     private N chooseType(Double result){
