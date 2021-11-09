@@ -10,7 +10,7 @@ public class Main {
         Num <Double> doubleNum = new Num(3.3);
         Num <Float> floatNum = new Num(1.12322342f);
 
-        var result = longNum.add(floatNum);
+        var result = longNum.subtract(floatNum);
         if (result == null){
             System.out.println("Error. Out of bounds type size.");
         }else {

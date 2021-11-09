@@ -16,7 +16,8 @@ public class Num <N extends Number>{
     }
 
     public N subtract(Num<?> x){
-        return null;
+        Double result = num.doubleValue() - x.getNum().doubleValue();
+        return chooseType(result);
     }
 
     public N multiply(Num<?> x){
