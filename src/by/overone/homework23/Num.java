@@ -10,9 +10,24 @@ public class Num <N extends Number>{
        this.num = num;
     }
 
-
     public N add(Num<?> x){
         Double result = num.doubleValue() + x.getNum().doubleValue();
+        return chooseType(result);
+    }
+
+    public N subtract(Num<?> x){
+        return null;
+    }
+
+    public N multiply(Num<?> x){
+        return null;
+    }
+
+    public N divide(Num<?> x){
+        return null;
+    }
+
+    private N chooseType(Double result){
 
         Class<? extends Number> type = num.getClass();
         switch (type.getSimpleName()){
@@ -56,18 +71,6 @@ public class Num <N extends Number>{
                 }
         }
 
-        return null;
-    }
-
-    public N subtract(Num<?> x){
-        return null;
-    }
-
-    public N multiply(Num<?> x){
-        return null;
-    }
-
-    public N divide(Num<?> x){
         return null;
     }
 
