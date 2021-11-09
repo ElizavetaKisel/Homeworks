@@ -12,13 +12,8 @@ public class Main {
         Num <Float> floatNum = new Num(2.12322342f);
 
         try {
-            var result = intNum1.divide(intNum);
+            var result = shortNum.multiply(intNum1);
             System.out.println(result);
-            if (result == null) {
-                System.out.println("Error. Out of bounds type size.");
-            } else {
-                System.out.println(result);
-            }
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
