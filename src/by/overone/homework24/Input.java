@@ -29,7 +29,7 @@ public class Input {
                 this.birthDay = parseInt(m1.group());
             }
             try {
-                if (birthDay <= Month.valueOf(birthMonth.toUpperCase()).getDays() & birthDay > 0) {
+                if (birthDay <= Zodiac.Month.valueOf(birthMonth.toUpperCase()).getDays() & birthDay > 0) {
                     break;
                 } else {
                     System.out.println("Nonexistent date. Please re-enter:");

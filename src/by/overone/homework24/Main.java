@@ -6,6 +6,7 @@ public class Main {
         System.out.println("Enter your birthday: ");
         Input input = new Input();
         input.enterBirthday();
+        System.out.println(Zodiac.getZodiacSign(input.getBirthMonth(),input.getBirthDay()));
 
     }
 }
