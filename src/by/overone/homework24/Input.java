@@ -36,6 +36,8 @@ public class Input {
                 }
             }catch (IllegalArgumentException ex){
                 System.out.println("Nonexistent month. Please re-enter:");
+            }catch (NullPointerException ex){
+                System.out.println("Incorrect input. Please re-enter:");
             }
         }
     }
