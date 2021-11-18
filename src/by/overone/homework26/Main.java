@@ -2,7 +2,10 @@ package by.overone.homework26;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BinaryOperator;
+import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.function.UnaryOperator;
 
 public class Main {
 
@@ -39,21 +42,19 @@ public class Main {
             }
         };
         List<String> list= new ArrayList<>();
-        list.add("XXhgvG");
-        list.add("XzhgvG");
+        list.add("XXaaa");
+        list.add("XaXaa");
         list.add("XX");
+        list.add("aa");
         System.out.println(Operation.getString(list, startString));
 
         System.out.println("Task 4: ");
         int[] arr = new int[]{2,-4,9,-1,-100};
-        Predicate<Integer> predicate = new Predicate<Integer>() {
-            @Override
-            public boolean test(Integer a) {
-                if(a > 0) {
-                    return true;
-                }else{
-                    return false;
-                }
+        Predicate<Integer> predicate = a -> {
+            if(a > 0) {
+                return true;
+            }else{
+                return false;
             }
         };
         for (int a: arr) {
@@ -61,5 +62,13 @@ public class Main {
                 System.out.println(a);
             }
         }
+        System.out.println("Task 5: ");
+        UnaryOperator<Double> unary = a -> Math.pow(a,2);
+        System.out.println(unary.apply(7.2));
+        BinaryOperator<String> binary = (s, s2) -> s + " " + s2;
+        for (int i = 0; i < list.size() -1; i++){
+            System.out.println(binary.apply(list.get(i), list.get(i+1)));
+        }
     }
+
 }
