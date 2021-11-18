@@ -2,10 +2,7 @@ package by.overone.homework26;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.BinaryOperator;
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.function.UnaryOperator;
+import java.util.function.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -94,10 +91,42 @@ public class Main {
                 case "BUN": return sum * 0.41;
                 case "EUR": return sum * 1.14;
                 case "USD": return sum;
+                default:
+                    return null;
             }
-            return null;
         };
         System.out.println(function.apply("200 bun "));
         System.out.println(function.apply("Eur 50"));
+
+        System.out.println("Task 7: ");
+        Consumer<String> consumer = s -> {
+            String currency = "";
+            double sum = 0;
+            Pattern p1 = Pattern.compile("[a-zA-Z]+");
+            Matcher m1 = p1.matcher(s);
+            if (m1.find()) {
+                currency = m1.group();
+            }
+
+            p1 = Pattern.compile("\\d+");
+            m1 = p1.matcher(s);
+
+            if (m1.find()) {
+                sum = parseInt(m1.group());
+            }
+
+            switch (currency.toUpperCase()){
+                case "BUN": System.out.println(sum * 0.41);
+                break;
+                case "EUR": System.out.println(sum * 1.14);
+                break;
+                case "USD": System.out.println(sum);
+                break;
+                default:
+                    System.out.println("No such currency");;
+            }
+        };
+        consumer.accept("180usd");
+        consumer.accept("2r");
     }
 }
