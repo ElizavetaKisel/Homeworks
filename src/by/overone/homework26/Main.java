@@ -2,6 +2,7 @@ package by.overone.homework26;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import java.util.function.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -128,5 +129,13 @@ public class Main {
         };
         consumer.accept("180usd");
         consumer.accept("2r");
+
+        System.out.println("Task 8:");
+        Supplier<String> supplier = () -> {
+            Scanner scan = new Scanner(System.in);
+            StringBuffer str = new StringBuffer();
+            return str.reverse().toString();
+        };
+        System.out.println();
     }
 }
