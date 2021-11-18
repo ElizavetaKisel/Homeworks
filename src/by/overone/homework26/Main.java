@@ -6,6 +6,10 @@ import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.UnaryOperator;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import static java.lang.Integer.parseInt;
 
 public class Main {
 
@@ -69,6 +73,31 @@ public class Main {
         for (int i = 0; i < list.size() -1; i++){
             System.out.println(binary.apply(list.get(i), list.get(i+1)));
         }
-    }
+        System.out.println("Task 6: ");
+        Function<String, Double> function = s -> {
+            String currency = "";
+            double sum = 0;
+            Pattern p1 = Pattern.compile("[a-zA-Z]+");
+            Matcher m1 = p1.matcher(s);
+            if (m1.find()) {
+                currency = m1.group();
+            }
 
+            p1 = Pattern.compile("\\d+");
+            m1 = p1.matcher(s);
+
+            if (m1.find()) {
+                sum = parseInt(m1.group());
+            }
+
+            switch (currency.toUpperCase()){
+                case "BUN": return sum * 0.41;
+                case "EUR": return sum * 1.14;
+                case "USD": return sum;
+            }
+            return null;
+        };
+        System.out.println(function.apply("200 bun "));
+        System.out.println(function.apply("Eur 50"));
+    }
 }
