@@ -30,6 +30,18 @@ public class Main {
         System.out.println(comparsion.compare(5, 20));
         System.out.println(comparsion.compare(5, 5));
 
-
+        Predicate<String> startString = s -> {
+            if(s.startsWith("XX")){
+                return true;
+            }else {
+                return false;
+            }
+        };
+        List<String> list= new ArrayList<>();
+        list.add("XXhgvG");
+        list.add("XzhgvG");
+        list.add("XX");
+        System.out.println("Task 3: ");
+        System.out.println(Operation.getString(list, startString));
     }
 }
