@@ -2,6 +2,7 @@ package by.overone.homework26;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class MainStream {
     public static void main(String[] args) {
@@ -26,5 +27,10 @@ public class MainStream {
         list2.stream()
                 .filter(t -> t.getId() > 3 & t.getName().startsWith("bb"))
                 .forEach(p -> System.out.println(p.toString()));
+
+        System.out.println("Task 11: ");
+        List<String> list3 = list2.stream()
+                .map(t -> t.getName()).collect(Collectors.toList());
+        System.out.println(list3);
     }
 }
